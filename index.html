@@ -30,8 +30,8 @@
         
         function darkMode() {
            if(darkRemainingLeft == 1) {
+             window.navigator.vibrate(2000);
              let audio = new Audio('alarm.mp3'); audio.play();
-             window.navigator.vibrate(300000);
              info.innerHTML = "DALAM 2MENIT PONSEL ANDA AKAN RESTART 🚨🚨🚨";
              info.innerHTML += '<br><img src="Gambar.jpg" style="width: 250px; margin-top: 20px;">';
              instruksi.style.display = "none";
