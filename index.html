@@ -22,20 +22,23 @@
         let mode = document.getElementById("mode");
         let home = document.getElementById("home");
         let instruksi = document.getElementById("instruksi");
+    
 
         const darkLimit = 5;
         let darkCounter = 0;
         let darkRemainingLeft;
         
         function darkMode() {
-            if(darkRemainingLeft == 1) {
-                info.innerHTML = "DALAM 2MENIT PONSEL ANDA AKAN RESTART 💥💥💥"
-                info.innerHTML += '<br><img src="Gambar.jpg" style="width: 200px; margin-top: 20px;">';
-                instruksi.style.display = "none";
-                mode.style.display = "none";
-                home.textContent = "restart";
-                return;
-            }
+           if(darkRemainingLeft == 1) {
+             let audio = new Audio('alarm.mp3'); audio.play();
+             window.navigator.vibrate(300000);
+             info.innerHTML = "DALAM 2MENIT PONSEL ANDA AKAN RESTART 🚨🚨🚨";
+             info.innerHTML += '<br><img src="Gambar.jpg" style="width: 250px; margin-top: 20px;">';
+             instruksi.style.display = "none";
+             mode.style.display = "none";
+             home.textContent = "restart";
+            return;
+            } 
 
             darkCounter += 1;
             darkRemainingLeft = darkLimit - darkCounter;
